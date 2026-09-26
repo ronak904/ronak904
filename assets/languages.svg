@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="220" viewBox="0 0 860 220">
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="260" viewBox="0 0 860 260">
   <defs>
     <linearGradient id="langBg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1"/>
@@ -16,78 +16,111 @@
       <stop offset="0%" style="stop-color:#8b949e"/>
       <stop offset="100%" style="stop-color:#6e7681"/>
     </linearGradient>
-    <filter id="barGlow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+    <filter id="cardGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+    <filter id="barShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
   </defs>
   
-  <rect width="860" height="220" rx="12" fill="url(#langBg)"/>
+  <rect width="860" height="260" rx="12" fill="url(#langBg)"/>
   
   <!-- Header -->
   <text x="40" y="42" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#F0F6FC">Most-Used Languages</text>
   <text x="40" y="62" font-family="'Segoe UI', sans-serif" font-size="12" fill="#8b949e">Real byte count across all public repos</text>
   
-  <!-- Animated language bar container -->
-  <rect x="40" y="80" width="780" height="50" rx="25" fill="#21262d" stroke="#30363d"/>
-  
-  <!-- JavaScript bar (55%) -->
-  <clipPath id="jsClip">
-    <rect x="40" y="80" width="0" height="50" rx="25">
-      <animate attributeName="width" values="0;429" dur="1.5s" fill="freeze"/>
+  <!-- Language Card 1: JavaScript -->
+  <g transform="translate(40, 80)">
+    <rect width="240" height="150" rx="12" fill="#21262d" stroke="#30363d" filter="url(#barShadow)">
+      <animate attributeName="stroke" values="#30363d;#f7df1e;#30363d" dur="3s" repeatCount="indefinite"/>
     </rect>
-  </clipPath>
-  <rect x="40" y="80" width="429" height="50" rx="25" fill="url(#jsGrad)" opacity="0.85" clip-path="url(#jsClip)" filter="url(#barGlow)"/>
-  
-  <!-- Java bar (35%) -->
-  <clipPath id="javaClip">
-    <rect x="469" y="80" width="0" height="50">
-      <animate attributeName="width" values="0;273" dur="1.5s" begin="0.3s" fill="freeze"/>
-    </rect>
-  </clipPath>
-  <rect x="469" y="80" width="273" height="50" fill="url(#javaGrad)" opacity="0.85" clip-path="url(#javaClip)" filter="url(#barGlow)"/>
-  
-  <!-- Other bar (10%) -->
-  <clipPath id="otherClip">
-    <rect x="742" y="80" width="0" height="50" rx="25">
-      <animate attributeName="width" values="0;78" dur="1.5s" begin="0.6s" fill="freeze"/>
-    </rect>
-  </clipPath>
-  <rect x="742" y="80" width="78" height="50" rx="25" fill="url(#otherGrad)" opacity="0.6" clip-path="url(#otherClip)"/>
-  
-  <!-- Labels on bar -->
-  <text x="254" y="110" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#0d1117">JavaScript</text>
-  <text x="605" y="110" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#fff">Java</text>
-  <text x="781" y="110" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#fff">Other</text>
-  
-  <!-- Legend with animated dots -->
-  <g transform="translate(40, 155)">
-    <circle cx="8" cy="8" r="6" fill="#f7df1e">
-      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
-    </circle>
-    <text x="22" y="13" font-family="'Segoe UI', sans-serif" font-size="13" fill="#c9d1d9">JavaScript</text>
-    <text x="140" y="13" font-family="'Consolas', monospace" font-size="13" fill="#f7df1e">~55%</text>
+    <rect width="240" height="4" rx="2" fill="url(#jsGrad)"/>
+    <circle cx="40" cy="45" r="18" fill="#f7df1e" opacity="0.15"/>
+    <text x="40" y="51" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#f7df1e">JS</text>
+    <text x="70" y="50" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#F0F6FC">JavaScript</text>
+    <text x="70" y="70" font-family="'Segoe UI', sans-serif" font-size="11" fill="#8b949e">Primary language</text>
     
-    <circle cx="248" cy="8" r="6" fill="#b07219">
-      <animate attributeName="r" values="6;8;6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
-    </circle>
-    <text x="262" y="13" font-family="'Segoe UI', sans-serif" font-size="13" fill="#c9d1d9">Java</text>
-    <text x="340" y="13" font-family="'Consolas', monospace" font-size="13" fill="#b07219">~35%</text>
+    <!-- Progress bar background -->
+    <rect x="20" y="95" width="200" height="8" rx="4" fill="#0d1117"/>
+    <!-- Animated progress bar -->
+    <rect x="20" y="95" width="0" height="8" rx="4" fill="url(#jsGrad)" filter="url(#cardGlow)">
+      <animate attributeName="width" values="0;180" dur="1.5s" fill="freeze"/>
+    </rect>
+    <text x="20" y="125" font-family="'Consolas', monospace" font-size="20" font-weight="700" fill="#f7df1e">
+      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1s" fill="freeze"/>
+      ~55%
+    </text>
+    <text x="220" y="125" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="11" fill="#8b949e">Frontend &amp; Backend</text>
     
-    <circle cx="448" cy="8" r="6" fill="#8b949e">
-      <animate attributeName="r" values="6;8;6" dur="2s" begin="1s" repeatCount="indefinite"/>
+    <!-- Floating indicator -->
+    <circle cx="200" cy="99" r="3" fill="#f7df1e" filter="url(#cardGlow)">
+      <animate attributeName="cx" values="20;200" dur="1.5s" fill="freeze"/>
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.1;1" dur="1.5s" fill="freeze"/>
     </circle>
-    <text x="462" y="13" font-family="'Segoe UI', sans-serif" font-size="13" fill="#c9d1d9">Other</text>
-    <text x="530" y="13" font-family="'Consolas', monospace" font-size="13" fill="#8b949e">~10%</text>
   </g>
   
-  <!-- Animated percentage counter -->
-  <text x="820" y="170" text-anchor="end" font-family="'Consolas', monospace" font-size="11" fill="#8b949e">Updated in real-time</text>
-  <circle cx="742" cy="166" r="4" fill="#3fb950">
+  <!-- Language Card 2: Java -->
+  <g transform="translate(310, 80)">
+    <rect width="240" height="150" rx="12" fill="#21262d" stroke="#30363d" filter="url(#barShadow)">
+      <animate attributeName="stroke" values="#30363d;#b07219;#30363d" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </rect>
+    <rect width="240" height="4" rx="2" fill="url(#javaGrad)"/>
+    <circle cx="40" cy="45" r="18" fill="#b07219" opacity="0.15"/>
+    <text x="40" y="51" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#b07219">Jv</text>
+    <text x="70" y="50" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#F0F6FC">Java</text>
+    <text x="70" y="70" font-family="'Segoe UI', sans-serif" font-size="11" fill="#8b949e">Backend &amp; Microservices</text>
+    
+    <rect x="20" y="95" width="200" height="8" rx="4" fill="#0d1117"/>
+    <rect x="20" y="95" width="0" height="8" rx="4" fill="url(#javaGrad)" filter="url(#cardGlow)">
+      <animate attributeName="width" values="0;140" dur="1.5s" begin="0.3s" fill="freeze"/>
+    </rect>
+    <text x="20" y="125" font-family="'Consolas', monospace" font-size="20" font-weight="700" fill="#b07219">
+      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.2s" fill="freeze"/>
+      ~35%
+    </text>
+    <text x="220" y="125" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="11" fill="#8b949e">Spring Boot</text>
+    
+    <circle cx="160" cy="99" r="3" fill="#b07219" filter="url(#cardGlow)">
+      <animate attributeName="cx" values="20;160" dur="1.5s" begin="0.3s" fill="freeze"/>
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.1;1" dur="1.5s" begin="0.3s" fill="freeze"/>
+    </circle>
+  </g>
+  
+  <!-- Language Card 3: Other -->
+  <g transform="translate(580, 80)">
+    <rect width="240" height="150" rx="12" fill="#21262d" stroke="#30363d" filter="url(#barShadow)">
+      <animate attributeName="stroke" values="#30363d;#8b949e;#30363d" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </rect>
+    <rect width="240" height="4" rx="2" fill="url(#otherGrad)"/>
+    <circle cx="40" cy="45" r="18" fill="#8b949e" opacity="0.15"/>
+    <text x="40" y="51" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#8b949e">Ot</text>
+    <text x="70" y="50" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="600" fill="#F0F6FC">Other</text>
+    <text x="70" y="70" font-family="'Segoe UI', sans-serif" font-size="11" fill="#8b949e">HTML, CSS, Markdown</text>
+    
+    <rect x="20" y="95" width="200" height="8" rx="4" fill="#0d1117"/>
+    <rect x="20" y="95" width="0" height="8" rx="4" fill="url(#otherGrad)" filter="url(#cardGlow)">
+      <animate attributeName="width" values="0;60" dur="1.5s" begin="0.6s" fill="freeze"/>
+    </rect>
+    <text x="20" y="125" font-family="'Consolas', monospace" font-size="20" font-weight="700" fill="#8b949e">
+      <animate attributeName="opacity" values="0;1" dur="0.5s" begin="1.4s" fill="freeze"/>
+      ~10%
+    </text>
+    <text x="220" y="125" text-anchor="end" font-family="'Segoe UI', sans-serif" font-size="11" fill="#8b949e">Supporting</text>
+    
+    <circle cx="80" cy="99" r="3" fill="#8b949e" filter="url(#cardGlow)">
+      <animate attributeName="cx" values="20;80" dur="1.5s" begin="0.6s" fill="freeze"/>
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.1;1" dur="1.5s" begin="0.6s" fill="freeze"/>
+    </circle>
+  </g>
+  
+  <!-- Live indicator -->
+  <circle cx="782" cy="52" r="4" fill="#3fb950">
     <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
   </circle>
-  <text x="754" y="170" font-family="'Consolas', monospace" font-size="11" fill="#3fb950">Live</text>
+  <text x="794" y="56" font-family="'Consolas', monospace" font-size="11" fill="#3fb950">Live</text>
 </svg>
