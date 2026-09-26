@@ -16,7 +16,7 @@
 
 <div align="center">
 
-<img src="assets/profile.png" alt="Bittu Prasad Mandal — profile photo" width="150" style="border-radius:50%;border:3px solid #A855F7;box-shadow:0 0 20px rgba(168,85,247,0.5);" />
+<img src="assets/avatar.svg" alt="Bittu Prasad Mandal — profile photo" width="180" />
 
 <br/>
 
