@@ -12,8 +12,20 @@
       <stop offset="0%" style="stop-color:#F0F6FC;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#67E8F9;stop-opacity:1" />
     </linearGradient>
+    <linearGradient id="shimmerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#67E8F9;stop-opacity:0" />
+      <stop offset="50%" style="stop-color:#67E8F9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0" />
+    </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -23,30 +35,81 @@
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#21262d" stroke-width="0.5"/>
     </pattern>
   </defs>
+  
+  <!-- Background -->
   <rect width="900" height="220" rx="16" fill="url(#bgGrad)"/>
   <rect width="900" height="220" rx="16" fill="url(#grid)" opacity="0.5"/>
+  
+  <!-- Animated background pulse -->
+  <circle cx="780" cy="110" r="80" fill="#67E8F9" opacity="0.02">
+    <animate attributeName="r" values="60;90;60" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.02;0.05;0.02" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="100" cy="40" r="50" fill="#3B82F6" opacity="0.02">
+    <animate attributeName="r" values="40;70;40" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.02;0.04;0.02" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Top accent line with shimmer -->
   <rect x="0" y="0" width="900" height="4" fill="url(#accentGrad)"/>
-  <rect x="40" y="60" width="4" height="100" rx="2" fill="url(#accentGrad)"/>
-  <circle cx="780" cy="40" r="60" fill="#67E8F9" opacity="0.03"/>
-  <circle cx="720" cy="180" r="80" fill="#3B82F6" opacity="0.03"/>
-  <circle cx="60" cy="180" r="40" fill="#67E8F9" opacity="0.03"/>
+  <rect x="-200" y="0" width="200" height="4" fill="url(#shimmerGrad)" opacity="0.6">
+    <animate attributeName="x" values="-200;900" dur="3s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Left accent bar with pulse -->
+  <rect x="40" y="60" width="4" height="100" rx="2" fill="url(#accentGrad)">
+    <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Greeting -->
   <text x="70" y="95" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#8b949e" letter-spacing="3">HELLO WORLD, I AM</text>
+  
+  <!-- Name with glow -->
   <text x="68" y="145" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="42" font-weight="800" fill="url(#nameGrad)" filter="url(#glow)">Bittu Prasad Mandal</text>
-  <text x="70" y="185" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#67E8F9">Web Developer · JavaScript · Java · HTML · CSS</text>
-  <g transform="translate(620, 70)">
-    <rect width="240" height="36" rx="18" fill="#21262d" stroke="#30363d" stroke-width="1"/>
-    <circle cx="24" cy="18" r="6" fill="#3fb950"/>
-    <text x="40" y="23" font-family="'Consolas', monospace" font-size="12" fill="#c9d1d9">Open to opportunities</text>
+  
+  <!-- Animated underline under name -->
+  <rect x="70" y="155" width="0" height="3" rx="1.5" fill="url(#accentGrad)" filter="url(#softGlow)">
+    <animate attributeName="width" values="0;350;350" dur="2s;2s;1s" fill="freeze"/>
+    <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.3;1" dur="2s" fill="freeze"/>
+  </rect>
+  
+  <!-- Title with typing cursor effect -->
+  <text x="70" y="190" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#67E8F9">Web Developer · JavaScript · Java · HTML · CSS</text>
+  <rect x="490" y="174" width="10" height="20" rx="2" fill="#67E8F9">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Right side badges with float animation -->
+  <g transform="translate(620, 65)">
+    <rect width="240" height="34" rx="17" fill="#21262d" stroke="#30363d" stroke-width="1">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,-3;0,0" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="22" cy="17" r="5" fill="#3fb950">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="36" y="22" font-family="'Consolas', monospace" font-size="11" fill="#c9d1d9">Open to opportunities</text>
   </g>
-  <g transform="translate(620, 116)">
-    <rect width="240" height="36" rx="18" fill="#21262d" stroke="#30363d" stroke-width="1"/>
-    <circle cx="24" cy="18" r="6" fill="#58a6ff"/>
-    <text x="40" y="23" font-family="'Consolas', monospace" font-size="12" fill="#c9d1d9">BTech CSE · Class of 2026</text>
+  
+  <g transform="translate(620, 109)">
+    <rect width="240" height="34" rx="17" fill="#21262d" stroke="#30363d" stroke-width="1">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,-3;0,0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="22" cy="17" r="5" fill="#58a6ff">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="36" y="22" font-family="'Consolas', monospace" font-size="11" fill="#c9d1d9">BTech CSE · Class of 2026</text>
   </g>
-  <g transform="translate(620, 162)">
-    <rect width="240" height="36" rx="18" fill="#21262d" stroke="#30363d" stroke-width="1"/>
-    <circle cx="24" cy="18" r="6" fill="#d29922"/>
-    <text x="40" y="23" font-family="'Consolas', monospace" font-size="12" fill="#c9d1d9">Working at Subisu Pvt. Ltd.</text>
+  
+  <g transform="translate(620, 153)">
+    <rect width="240" height="34" rx="17" fill="#21262d" stroke="#30363d" stroke-width="1">
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,-3;0,0" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="22" cy="17" r="5" fill="#d29922">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+    <text x="36" y="22" font-family="'Consolas', monospace" font-size="11" fill="#c9d1d9">Working at Subisu Pvt. Ltd.</text>
   </g>
+  
+  <!-- Bottom accent line -->
   <rect x="0" y="216" width="900" height="4" fill="url(#accentGrad)"/>
 </svg>

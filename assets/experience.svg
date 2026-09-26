@@ -11,35 +11,53 @@
     <filter id="expShadow">
       <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
     </filter>
+    <filter id="expGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
+  
   <rect width="860" height="300" rx="12" fill="url(#expBg)"/>
+  
   <text x="40" y="45" font-family="'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#F0F6FC">Work Experience</text>
   <rect x="40" y="57" width="50" height="3" rx="1.5" fill="url(#expAccent)"/>
 
   <!-- Timeline line -->
   <rect x="79" y="90" width="3" height="180" rx="1.5" fill="#30363d"/>
+  <rect x="79" y="90" width="3" height="0" rx="1.5" fill="#67E8F9">
+    <animate attributeName="height" values="0;180" dur="1.5s" fill="freeze"/>
+  </rect>
 
   <!-- Experience 1: The Developers Area -->
-  <circle cx="80" cy="120" r="7" fill="#67E8F9"/>
+  <circle cx="80" cy="120" r="7" fill="#67E8F9" filter="url(#expGlow)">
+    <animate attributeName="r" values="7;9;7" dur="2s" repeatCount="indefinite"/>
+  </circle>
   <circle cx="80" cy="120" r="12" fill="none" stroke="#67E8F9" stroke-width="2" opacity="0.4"/>
 
   <g filter="url(#expShadow)">
     <rect x="110" y="90" width="700" height="95" rx="10" fill="#21262d" stroke="#30363d"/>
   </g>
   <rect x="110" y="90" width="4" height="95" rx="2" fill="#67E8F9"/>
+  
   <text x="135" y="118" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#F0F6FC">Web Development Intern</text>
   <text x="135" y="138" font-family="'Segoe UI', sans-serif" font-size="13" fill="#67E8F9">The Developers Area</text>
   <text x="135" y="158" font-family="'Consolas', monospace" font-size="12" fill="#8b949e">February 2026 — August 2026</text>
   <text x="135" y="178" font-family="'Segoe UI', sans-serif" font-size="12" fill="#c9d1d9">• Developed responsive web applications using JavaScript and modern frameworks</text>
 
   <!-- Experience 2: Subisu -->
-  <circle cx="80" cy="215" r="7" fill="#3fb950"/>
+  <circle cx="80" cy="215" r="7" fill="#3fb950" filter="url(#expGlow)">
+    <animate attributeName="r" values="7;9;7" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+  </circle>
   <circle cx="80" cy="215" r="12" fill="none" stroke="#3fb950" stroke-width="2" opacity="0.4"/>
 
   <g filter="url(#expShadow)">
     <rect x="110" y="185" width="700" height="95" rx="10" fill="#21262d" stroke="#30363d"/>
   </g>
   <rect x="110" y="185" width="4" height="95" rx="2" fill="#3fb950"/>
+  
   <text x="135" y="213" font-family="'Segoe UI', sans-serif" font-size="15" font-weight="700" fill="#F0F6FC">Junior Assistant — Techno Sales</text>
   <text x="135" y="233" font-family="'Segoe UI', sans-serif" font-size="13" fill="#3fb950">Subisu Pvt. Ltd.</text>
   <text x="135" y="253" font-family="'Consolas', monospace" font-size="12" fill="#8b949e">17 August 2026 — Present</text>

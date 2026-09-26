@@ -1,37 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="180" viewBox="0 0 860 180">
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="220" viewBox="0 0 860 220">
   <defs>
     <linearGradient id="langBg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1"/>
       <stop offset="100%" style="stop-color:#161b22;stop-opacity:1"/>
     </linearGradient>
+    <linearGradient id="jsGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f7df1e"/>
+      <stop offset="100%" style="stop-color:#e3b341"/>
+    </linearGradient>
+    <linearGradient id="javaGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#b07219"/>
+      <stop offset="100%" style="stop-color:#e76f00"/>
+    </linearGradient>
+    <linearGradient id="otherGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b949e"/>
+      <stop offset="100%" style="stop-color:#6e7681"/>
+    </linearGradient>
+    <filter id="barGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
   
-  <!-- Background -->
-  <rect width="860" height="180" rx="12" fill="url(#langBg)"/>
+  <rect width="860" height="220" rx="12" fill="url(#langBg)"/>
   
   <!-- Header -->
-  <text x="40" y="45" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#F0F6FC">Most-Used Languages</text>
-  <text x="40" y="65" font-family="'Segoe UI', sans-serif" font-size="12" fill="#8b949e">Real byte count across all public repos</text>
+  <text x="40" y="42" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#F0F6FC">Most-Used Languages</text>
+  <text x="40" y="62" font-family="'Segoe UI', sans-serif" font-size="12" fill="#8b949e">Real byte count across all public repos</text>
   
-  <!-- Language Bar -->
-  <rect x="40" y="85" width="780" height="40" rx="20" fill="#21262d" stroke="#30363d"/>
+  <!-- Animated language bar container -->
+  <rect x="40" y="80" width="780" height="50" rx="25" fill="#21262d" stroke="#30363d"/>
   
-  <!-- JavaScript portion (estimated 55%) -->
-  <rect x="40" y="85" width="429" height="40" rx="20" fill="#f1e05a" opacity="0.8"/>
+  <!-- JavaScript bar (55%) -->
+  <clipPath id="jsClip">
+    <rect x="40" y="80" width="0" height="50" rx="25">
+      <animate attributeName="width" values="0;429" dur="1.5s" fill="freeze"/>
+    </rect>
+  </clipPath>
+  <rect x="40" y="80" width="429" height="50" rx="25" fill="url(#jsGrad)" opacity="0.85" clip-path="url(#jsClip)" filter="url(#barGlow)"/>
   
-  <!-- Java portion (estimated 35%) -->
-  <rect x="469" y="85" width="273" height="40" fill="#b07219" opacity="0.8"/>
+  <!-- Java bar (35%) -->
+  <clipPath id="javaClip">
+    <rect x="469" y="80" width="0" height="50">
+      <animate attributeName="width" values="0;273" dur="1.5s" begin="0.3s" fill="freeze"/>
+    </rect>
+  </clipPath>
+  <rect x="469" y="80" width="273" height="50" fill="url(#javaGrad)" opacity="0.85" clip-path="url(#javaClip)" filter="url(#barGlow)"/>
   
-  <!-- Other portion (estimated 10%) -->
-  <rect x="742" y="85" width="78" height="40" rx="20" fill="#8b949e" opacity="0.6"/>
+  <!-- Other bar (10%) -->
+  <clipPath id="otherClip">
+    <rect x="742" y="80" width="0" height="50" rx="25">
+      <animate attributeName="width" values="0;78" dur="1.5s" begin="0.6s" fill="freeze"/>
+    </rect>
+  </clipPath>
+  <rect x="742" y="80" width="78" height="50" rx="25" fill="url(#otherGrad)" opacity="0.6" clip-path="url(#otherClip)"/>
   
-  <!-- Labels -->
-  <text x="55" y="110" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#0d1117">JavaScript</text>
-  <text x="55" y="135" font-family="'Consolas', monospace" font-size="12" fill="#8b949e">~55%</text>
+  <!-- Labels on bar -->
+  <text x="254" y="110" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#0d1117">JavaScript</text>
+  <text x="605" y="110" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#fff">Java</text>
+  <text x="781" y="110" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#fff">Other</text>
   
-  <text x="480" y="110" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#fff">Java</text>
-  <text x="480" y="135" font-family="'Consolas', monospace" font-size="12" fill="#8b949e">~35%</text>
+  <!-- Legend with animated dots -->
+  <g transform="translate(40, 155)">
+    <circle cx="8" cy="8" r="6" fill="#f7df1e">
+      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="22" y="13" font-family="'Segoe UI', sans-serif" font-size="13" fill="#c9d1d9">JavaScript</text>
+    <text x="140" y="13" font-family="'Consolas', monospace" font-size="13" fill="#f7df1e">~55%</text>
+    
+    <circle cx="248" cy="8" r="6" fill="#b07219">
+      <animate attributeName="r" values="6;8;6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="262" y="13" font-family="'Segoe UI', sans-serif" font-size="13" fill="#c9d1d9">Java</text>
+    <text x="340" y="13" font-family="'Consolas', monospace" font-size="13" fill="#b07219">~35%</text>
+    
+    <circle cx="448" cy="8" r="6" fill="#8b949e">
+      <animate attributeName="r" values="6;8;6" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <text x="462" y="13" font-family="'Segoe UI', sans-serif" font-size="13" fill="#c9d1d9">Other</text>
+    <text x="530" y="13" font-family="'Consolas', monospace" font-size="13" fill="#8b949e">~10%</text>
+  </g>
   
-  <text x="750" y="110" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#fff">Other</text>
-  <text x="750" y="135" font-family="'Consolas', monospace" font-size="12" fill="#8b949e">~10%</text>
+  <!-- Animated percentage counter -->
+  <text x="820" y="170" text-anchor="end" font-family="'Consolas', monospace" font-size="11" fill="#8b949e">Updated in real-time</text>
+  <circle cx="742" cy="166" r="4" fill="#3fb950">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <text x="754" y="170" font-family="'Consolas', monospace" font-size="11" fill="#3fb950">Live</text>
 </svg>
