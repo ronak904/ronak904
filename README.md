@@ -16,7 +16,7 @@
 
 <div align="center">
 
-<img src="assets/avatar.gif" alt="Bittu Prasad Mandal — profile photo" width="180" />
+<img src="assets/avatar.gif" alt="Bittu Prasad Mandal — profile photo" width="200" style="border-radius:50%;" />
 
 <br/>
 
