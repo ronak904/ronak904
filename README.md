@@ -16,7 +16,7 @@
 
 <div align="center">
 
-<img src="assets/avatar.svg" alt="Bittu Prasad Mandal — profile photo" width="150" />
+<img src="[assets/avatar.svg](https://avatars.githubusercontent.com/u/161148557?v=4)" alt="Bittu Prasad Mandal — profile photo" width="150" />
 
 <br/>
 
