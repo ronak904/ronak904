@@ -16,7 +16,7 @@
 
 <div align="center">
 
-<img src="[assets/avatar.svg](https://avatars.githubusercontent.com/u/161148557?v=4)" alt="Bittu Prasad Mandal — profile photo" width="150" />
+<img src="assets/profile.png" alt="Bittu Prasad Mandal — profile photo" width="150" style="border-radius:50%;border:3px solid #A855F7;box-shadow:0 0 20px rgba(168,85,247,0.5);" />
 
 <br/>
 
@@ -209,3 +209,11 @@
 [![Email](https://img.shields.io/badge/Email-ronakmandal904%40gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ronakmandal904@gmail.com)
 
 </div>
+
+<style>
+@keyframes gradientBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+</style>

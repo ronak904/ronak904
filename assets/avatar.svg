@@ -2,19 +2,32 @@
   <defs>
     <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#F472B6"/>
-      <stop offset="100%" style="stop-color:#A855F7"/>
+      <stop offset="25%" style="stop-color:#A855F7"/>
+      <stop offset="50%" style="stop-color:#67E8F9"/>
+      <stop offset="75%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#F472B6"/>
     </linearGradient>
     <clipPath id="circleClip">
-      <circle cx="90" cy="90" r="76"/>
+      <circle cx="90" cy="90" r="72"/>
     </clipPath>
-    <filter id="avatarShadow">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
+    <filter id="avatarGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
     </filter>
   </defs>
   
-  <!-- Outer ring with gradient -->
-  <circle cx="90" cy="90" r="86" fill="none" stroke="url(#ringGrad)" stroke-width="4"/>
+  <!-- Animated rotating ring using SMIL -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 90 90" to="360 90 90" dur="6s" repeatCount="indefinite"/>
+    <circle cx="90" cy="90" r="84" fill="none" stroke="url(#ringGrad)" stroke-width="3" stroke-dasharray="40 10 20 10" filter="url(#avatarGlow)"/>
+  </g>
   
-  <!-- Profile picture with proper aspect ratio -->
-  <image xlink:href="https://avatars.githubusercontent.com/u/161148557?v=4" x="14" y="14" width="152" height="152" clip-path="circleClip" preserveAspectRatio="xMidYMid slice"/>
+  <!-- Static outer ring -->
+  <circle cx="90" cy="90" r="86" fill="none" stroke="#21262d" stroke-width="1"/>
+  
+  <!-- Profile picture - direct URL works in GitHub img tags -->
+  <image xlink:href="https://avatars.githubusercontent.com/u/161148557?v=4" href="https://avatars.githubusercontent.com/u/161148557?v=4" x="14" y="14" width="152" height="152" clip-path="circleClip" preserveAspectRatio="xMidYMid slice"/>
 </svg>
