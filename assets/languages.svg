@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="180" viewBox="0 0 860 180">
+  <defs>
+    <linearGradient id="langBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="860" height="180" rx="12" fill="url(#langBg)"/>
+  
+  <!-- Header -->
+  <text x="40" y="45" font-family="'Segoe UI', sans-serif" font-size="18" font-weight="700" fill="#F0F6FC">Most-Used Languages</text>
+  <text x="40" y="65" font-family="'Segoe UI', sans-serif" font-size="12" fill="#8b949e">Real byte count across all public repos</text>
+  
+  <!-- Language Bar -->
+  <rect x="40" y="85" width="780" height="40" rx="20" fill="#21262d" stroke="#30363d"/>
+  
+  <!-- JavaScript portion (estimated 55%) -->
+  <rect x="40" y="85" width="429" height="40" rx="20" fill="#f1e05a" opacity="0.8"/>
+  
+  <!-- Java portion (estimated 35%) -->
+  <rect x="469" y="85" width="273" height="40" fill="#b07219" opacity="0.8"/>
+  
+  <!-- Other portion (estimated 10%) -->
+  <rect x="742" y="85" width="78" height="40" rx="20" fill="#8b949e" opacity="0.6"/>
+  
+  <!-- Labels -->
+  <text x="55" y="110" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#0d1117">JavaScript</text>
+  <text x="55" y="135" font-family="'Consolas', monospace" font-size="12" fill="#8b949e">~55%</text>
+  
+  <text x="480" y="110" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#fff">Java</text>
+  <text x="480" y="135" font-family="'Consolas', monospace" font-size="12" fill="#8b949e">~35%</text>
+  
+  <text x="750" y="110" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700" fill="#fff">Other</text>
+  <text x="750" y="135" font-family="'Consolas', monospace" font-size="12" fill="#8b949e">~10%</text>
+</svg>
