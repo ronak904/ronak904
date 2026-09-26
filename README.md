@@ -1,11 +1,11 @@
 <div align="center">
 
-<img src="assets/hero.svg" alt="Ronak Mandal — Web Developer" width="880" />
+<img src="assets/hero.svg" alt="Bittu Prasad Mandal — Web Developer" width="880" />
 
 <br/>
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Consolas&weight=800&size=17&duration=2600&pause=1200&color=67E8F9&center=true&vCenter=true&width=640&lines=Web+Developer+%E2%80%94+JavaScript%2C+Java%2C+HTML%2C+CSS.;7+public+projects%2C+all+real%2C+all+verifiable.;Learning+in+public+since+2024.;Hire+me+or+collaborate+%E2%80%94+I+reply." alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Consolas&weight=800&size=17&duration=2600&pause=1200&color=67E8F9&center=true&vCenter=true&width=640&lines=Web+Developer+%E2%80%94+JavaScript%2C+Java%2C+HTML%2C+CSS.;BTech+CSE+Class+of+2026+%E2%80%A2+Noida+International+University.;7+public+projects%2C+all+real%2C+all+verifiable.;Hire+me+or+collaborate+%E2%80%94+I+reply." alt="Typing SVG" />
 
 </div>
 
@@ -16,13 +16,13 @@
 
 <div align="center">
 
-<img src="assets/avatar.svg" alt="Ronak Mandal — profile photo" width="150" />
+<img src="assets/avatar.svg" alt="Bittu Prasad Mandal — profile photo" width="150" />
 
 <br/>
 
 <sup>PROFILE</sup>
 
-## Web Developer — JavaScript · Java · HTML · CSS
+## Bittu Prasad Mandal — Web Developer · JavaScript · Java · HTML · CSS
 
 </div>
 
@@ -31,11 +31,12 @@
 </p>
 <br/>
 
-- **Web developer** — builds responsive web applications and REST APIs with JavaScript and Java, rooted in strong foundations in data structures, algorithms, and the software development lifecycle.
+- **Web developer** — builds responsive web applications and REST APIs with JavaScript and Java, grounded in strong foundations in data structures, algorithms, and the software development lifecycle.
+- **BTech CSE · Class of 2026** — Noida International University, CGPA 7.00/10.00.
 - **7 public repositories** — every project built, tested, documented, and released in the open since 2024.
-- **YouTube educator** — shares JavaScript tutorials and coding content on the B2 Mandal YouTube channel to help other learners grow.
-- **Sigma Web Development Course** — completed the full sigma web development curriculum covering frontend and backend technologies.
-- **Java microservices** — actively learning and contributing to Java-based microservices and REST API projects.
+- **Web Development Intern** — The Developers Area (Feb–Aug 2026), hands-on with modern web stacks.
+- **Junior Assistant · Techno Sales** — Subisu Pvt. Ltd. (Aug 2026 — Present).
+- **YouTube educator** — shares JavaScript tutorials and coding content on the B2 Mandal channel.
 
 <br/>
 <br/>
@@ -51,7 +52,25 @@
 
 <div align="center">
 
-<img src="assets/education.svg?v=1" alt="Education — web development coursework, computer science fundamentals, and continuous learning" width="900" />
+<img src="assets/education.svg?v=2" alt="Education — Class X (GPA 4.00), +2 Science (GPA 3.04), BTech CSE (CGPA 7.00)" width="900" />
+
+</div>
+
+<br/>
+<br/>
+
+---
+
+<br/>
+<br/>
+
+<h3 align="center">Work Experience</h3>
+
+<br/>
+
+<div align="center">
+
+<img src="assets/experience.svg" alt="Experience — Web Development Intern at The Developers Area and Junior Assistant Techno Sales at Subisu Pvt. Ltd." width="900" />
 
 </div>
 
@@ -187,6 +206,6 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com)
 [![LeetCode](https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black)](https://leetcode.com)
 [![GeeksforGeeks](https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white)](https://www.geeksforgeeks.org)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ronak904@gmail.com)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:bittumandal@gmail.com)
 
 </div>

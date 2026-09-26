@@ -19,57 +19,34 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-    <filter id="shadow">
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.3"/>
-    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#21262d" stroke-width="0.5"/>
+    </pattern>
   </defs>
-  
-  <!-- Background -->
   <rect width="900" height="220" rx="16" fill="url(#bgGrad)"/>
-  
-  <!-- Decorative grid pattern -->
-  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#21262d" stroke-width="0.5"/>
-  </pattern>
   <rect width="900" height="220" rx="16" fill="url(#grid)" opacity="0.5"/>
-  
-  <!-- Accent line -->
   <rect x="0" y="0" width="900" height="4" fill="url(#accentGrad)"/>
-  
-  <!-- Left accent bar -->
   <rect x="40" y="60" width="4" height="100" rx="2" fill="url(#accentGrad)"/>
-  
-  <!-- Decorative circles -->
   <circle cx="780" cy="40" r="60" fill="#67E8F9" opacity="0.03"/>
   <circle cx="720" cy="180" r="80" fill="#3B82F6" opacity="0.03"/>
   <circle cx="60" cy="180" r="40" fill="#67E8F9" opacity="0.03"/>
-  
-  <!-- Main content -->
   <text x="70" y="95" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="400" fill="#8b949e" letter-spacing="3">HELLO WORLD, I AM</text>
-  
-  <text x="68" y="145" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="42" font-weight="800" fill="url(#nameGrad)" filter="url(#glow)">Ronak Mandal</text>
-  
+  <text x="68" y="145" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="42" font-weight="800" fill="url(#nameGrad)" filter="url(#glow)">Bittu Prasad Mandal</text>
   <text x="70" y="185" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="400" fill="#67E8F9">Web Developer · JavaScript · Java · HTML · CSS</text>
-  
-  <!-- Right side badges -->
   <g transform="translate(620, 70)">
     <rect width="240" height="36" rx="18" fill="#21262d" stroke="#30363d" stroke-width="1"/>
     <circle cx="24" cy="18" r="6" fill="#3fb950"/>
     <text x="40" y="23" font-family="'Consolas', monospace" font-size="12" fill="#c9d1d9">Open to opportunities</text>
   </g>
-  
   <g transform="translate(620, 116)">
     <rect width="240" height="36" rx="18" fill="#21262d" stroke="#30363d" stroke-width="1"/>
     <circle cx="24" cy="18" r="6" fill="#58a6ff"/>
-    <text x="40" y="23" font-family="'Consolas', monospace" font-size="12" fill="#c9d1d9">Learning in public</text>
+    <text x="40" y="23" font-family="'Consolas', monospace" font-size="12" fill="#c9d1d9">BTech CSE · Class of 2026</text>
   </g>
-  
   <g transform="translate(620, 162)">
     <rect width="240" height="36" rx="18" fill="#21262d" stroke="#30363d" stroke-width="1"/>
     <circle cx="24" cy="18" r="6" fill="#d29922"/>
-    <text x="40" y="23" font-family="'Consolas', monospace" font-size="12" fill="#c9d1d9">Building projects daily</text>
+    <text x="40" y="23" font-family="'Consolas', monospace" font-size="12" fill="#c9d1d9">Working at Subisu Pvt. Ltd.</text>
   </g>
-  
-  <!-- Bottom accent line -->
   <rect x="0" y="216" width="900" height="4" fill="url(#accentGrad)"/>
 </svg>
